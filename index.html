@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <title>Prototypes</title>
+  </head>
+  <body>
+		<div class="grid">
+			<h1 class="grid__title">Прототипы</h1>
+			<button class="grid__btn">Задать вопрос</button>
+			<div class="grid__row">
+				<div class="grid__cell">
+					<div class="counter">1.</div>
+					<code class="grid__code">
+						({}).<span class="light-blue">prototype</span> === ({}).<span class="light-blue">__proto__</span>
+					</code>
+				</div>
+				<div class="grid__cell">
+					Ответ: 
+					<code class="grid__code blue">
+						false
+					</code>
+					<div class="grid__cell-overlay">?</div>
+				</div>
+			</div>
+			<div class="grid__row">
+				<div class="grid__cell">
+					<div class="counter">2.</div> 
+					<code class="grid__code">
+						<span class="blue">function</span> <span class="function-name">someFunction</span>() {}
+						<br>
+						<span class="function-name">someFunction</span>.<span class="light-blue">prototype</span> === <span class="function-name">someFunction</span>.<span class="light-blue">__proto__</span>
+					</code>
+				</div>
+				<div class="grid__cell">
+					Ответ: 
+					<code class="grid__code blue">
+						false
+					</code>
+					<div class="grid__cell-overlay">?</div>
+				</div>
+			</div>
+			<div class="grid__row">
+				<div class="grid__cell">
+					<div class="counter">3.</div> 
+					<code class="grid__code">
+						<span class="blue">function</span> 
+						<span class="function-name">someFunction</span>() {}
+						<br>
+						<span class="blue">function</span>  <span class="function-name">anotherFunction</span>() {}
+						<br>
+						<span class="function-name">someFunction</span>.<span class="light-blue">__proto__</span> === <span class="function-name">anotherFunction</span>.<span class="light-blue">__proto__</span>
+					</code>
+				</div>
+				<div class="grid__cell">
+					Ответ: 
+					<code class="grid__code class">
+						true
+					</code>
+					<div class="grid__cell-overlay">?</div>
+				</div>
+			</div>
+			<div class="grid__row">
+				<div class="grid__cell">
+					<div class="counter">4.</div>
+					<code class="grid__code">
+						<span class="blue">function</span> <span class="function-name">someFunction</span>() {}
+						<br>
+						<span class="blue">function</span> <span class="function-name">anotherFunction</span>() {}
+						<br>
+						<span class="function-name">someFunction</span>.<span class="light-blue">prototype</span> === <span class="function-name">anotherFunction</span>.<span class="light-blue">prototype</span>
+					</code>
+				</div>
+				<div class="grid__cell">
+					Ответ: 
+					<code class="grid__code blue">
+						false
+					</code>
+					<div class="grid__cell-overlay">?</div>
+				</div>
+			</div>
+			<div class="grid__row">
+				<div class="grid__cell">
+					<div class="counter">5.</div> 
+					<code class="grid__code">
+						<span class="blue">let</span> <span class="function-name">arrowFunction</span> = () <span class="blue">=></span> {
+							<br>
+							<div class="tab"></div><span class="pink">return</span> <span class="brown">`Returning some string`</span>;
+							<br>
+						}
+						<br>
+						<span class="function-name">arrowFunction</span>.<span class="light-blue">prototype</span> === <span class="class">Object</span>.<span class="light-blue">prototype</span>
+					</code>
+				</div>
+				<div class="grid__cell">
+					Ответ: 
+					<code class="grid__code blue">
+						false
+					</code>
+					<div class="grid__cell-overlay">?</div>
+				</div>
+			</div>
+			<div class="grid__row">
+				<div class="grid__cell">
+					<div class="counter">6.</div> 
+					<code class="grid__code">
+						<span class="blue">let</span> <span class="light-blue">age</span> = <span class="light-green">18</span>
+						<br>
+						<span class="light-blue">age</span>.<span class="light-blue">prototype</span> === <span class="class">Number</span>.<span class="light-blue">prototype</span>
+					</code>
+				</div>
+				<div class="grid__cell">
+					Ответ: 
+					<code class="grid__code blue">
+						false
+					</code>
+					<div class="grid__cell-overlay">?</div>
+				</div>
+			</div>
+			<div class="grid__row">
+				<div class="grid__cell">
+					<div class="counter">7.</div> 
+					<code class="grid__code">
+						<span class="blue">let</span> <span class="light-blue">age</span> = <span class="light-green">18</span>
+						<br>
+						<span class="light-blue">age</span>.<span class="light-blue">__proto__</span> === <span class="class">Number</span>.<span class="light-blue">prototype</span>
+					</code>
+				</div>
+				<div class="grid__cell">
+					Ответ: 
+					<code class="grid__code class">
+						true
+					</code>
+					<div class="grid__cell-overlay">?</div>
+				</div>
+			</div>
+			<div class="grid__row">
+				<div class="grid__cell">
+					<div class="counter">8.</div> 
+					<code class="grid__code">
+						<span class="blue">class</span> <span class="class">Hacker</span> {}
+						<br>
+						<span class="class">Hacker</span>.<span class="light-blue">__proto__</span> === <span class="class">Function</span>.<span class="light-blue">prototype</span>
+					</code>
+				</div>
+				<div class="grid__cell">
+					Ответ: 
+					<code class="grid__code class">
+						true
+					</code>
+					<div class="grid__cell-overlay">?</div>
+				</div>
+			</div>
+			<div class="grid__row">
+				<div class="grid__cell">
+					<div class="counter">9.</div> 
+					<code class="grid__code">
+						<span class="blue">function</span> <span class="function-name">someFunction</span>() {}
+						<br>
+						<span class="function-name">someFunction</span>.<span class="light-blue">__proto__</span> === ???
+					</code>
+				</div>
+				<div class="grid__cell">
+					Ответ: 
+					<code class="grid__code">
+						<span class="class">Function</span>.<span class="light-blue">prototype</span>
+					</code>
+					<div class="grid__cell-overlay">?</div>
+				</div>
+			</div>
+			<div class="grid__row">
+				<div class="grid__cell">
+					<div class="counter">10.</div> 
+					<code class="grid__code">
+						<span class="blue">let</span> <span class="light-blue">count</span> = <span class="light-green">100</span>
+						<br>
+						<span class="light-blue">count</span>.<span class="light-blue">__proto__</span> === ???
+					</code>
+				</div>
+				<div class="grid__cell">
+					Ответ: 
+					<code class="grid__code">
+						<span class="class">Number</span>.<span class="light-blue">prototype</span>
+					</code>
+					<div class="grid__cell-overlay">?</div>
+				</div>
+			</div>
+			<div class="grid__row">
+				<div class="grid__cell">
+					<div class="counter">11.</div> 
+					<code class="grid__code">
+						<span class="blue">class</span> <span class="class">AsproNagibator</span> {
+							<br>
+						<div class="tab"></div><span class="blue">constructor</span>(name) {
+							<br>
+							<div class="tab"></div><div class="tab"></div><span class="blue">this</span>.name = name;
+							<br>
+							<div class="tab"></div>}
+							<br>
+							<div class="tab"></div><span class="function-name">hello</span>() { <span class="function-name">alert</span>(<span class="blue">this</span>.name) }
+							<br>
+						}
+						<br>
+						<span class="blue">let</span> <span class="light-blue">vadim</span> = <span class="blue">new</span> <span class="class">AsproNagibator</span>(<span class="brown">'Vadim'</span>);
+						<br>
+						<span class="light-blue">vadim</span>.<span class="light-blue">__proto__</span>.<span class="light-blue">__proto__</span> === ???
+					</code>
+				</div>
+				<div class="grid__cell">
+					Ответ: 
+					<code class="grid__code">
+						<span class="class">Object</span>.<span class="light-blue">prototype</span>
+					</code>
+					<div class="grid__cell-overlay">?</div>
+				</div>
+			</div>
+			<div class="grid__row">
+				<div class="grid__cell">
+					<div class="counter">12.</div> 
+					<code class="grid__code">
+						<span class="light-blue">vadim</span>.<span class="light-blue">__proto__</span>.<span class="light-blue">constructor</span>.<span class="light-blue">__proto__</span> === ???
+					</code>
+				</div>
+				<div class="grid__cell">
+					Ответ: 
+					<code class="grid__code">
+						<span class="class">Function</span>.<span class="light-blue">prototype</span>
+					</code>
+					<div class="grid__cell-overlay">?</div>
+				</div>
+			</div>
+			<div class="grid__row">
+				<div class="grid__cell">
+					<div class="counter">13.</div> 
+					<code class="grid__code">
+						<span class="light-blue">vadim</span>.<span class="light-blue">__proto__</span>.<span class="light-blue">__proto__</span>.<span class="light-blue">__proto__</span> === ???
+					</code>
+				</div>
+				<div class="grid__cell">
+					Ответ: 
+					<code class="grid__code">
+						<span class="blue">null</span>
+					</code>
+					<div class="grid__cell-overlay">?</div>
+				</div>
+			</div>
+		</div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
